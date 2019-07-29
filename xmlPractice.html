@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <p id="XML_Example"></p>
+    </body>
+    <script>
+        var XML_Parser, XML_Document;
+
+        var DragonBallSuper = "<character>" + 
+            "<name>Vegeta</name>" + 
+            "<race>Saiyan</race>" +
+            "<universe>7</universe>" +
+            "<wife>Bulma</wife>" +
+            "</character>";
+
+        XML_Parser = new DOMParser();
+        XML_Document = XML_Parser.parseFromString(DragonBallSuper, "text/xml");
+        document.getElementById("XML_Example").innerHTML = 
+            XML_Document.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+    </script>
+</html>
